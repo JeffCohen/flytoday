@@ -1,0 +1,40 @@
+<header>
+  Airport Dashboard
+</header>
+
+<aside>
+  <ul>
+    <li>Get Flights</li>
+    <li>Track a Flight</li>
+    <li>Maps</li>
+  </ul>
+</aside>
+
+<% codes = ['ORD', 'MDW', 'SFO', "LAX", "JFK"] %>
+
+<section>
+<% codes.each do |code| %>
+
+  <%
+     airport = Airport.new
+     airport.code = code
+  %>
+
+  <div>
+      <%= link_to "/details?airport=#{code}&zoom=8" do %>
+        <h1><%= code %></h1>
+        <i class="fa fa-plane"></i>
+        <h2><%= airport.min_delay  %> minutes</h2>
+      <% end %>
+  </div>
+
+<% end %>
+
+</section>
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+<h1>Airport Details</h1>
+
+<% airport = Airport.new %>
+<% airport.code = params["airport"] %>
+
+
+<p>Airport Code: <%= airport.code %></p>
+<p>Current Delay: <%= airport.min_delay %> minutes.</p>
+
+<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= airport.code %>&zoom=11&size=600x300">
