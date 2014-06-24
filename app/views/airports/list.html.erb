@@ -11,16 +11,10 @@
 </aside>
 
 <section>
-<% Airport.all.each do |code| %>
-
-  <%
-     airport = Airport.new
-     airport.code = code
-  %>
-
+<% @airports.each do |airport| %>
   <div>
-      <%= link_to "/details?airport=#{code}&zoom=8" do %>
-        <h1><%= code %></h1>
+      <%= link_to "/details?id=#{airport.id}&zoom=8" do %>
+        <h1><%= airport.code %></h1>
         <i class="fa fa-plane"></i>
         <h2><%= airport.min_delay  %> minutes</h2>
       <% end %>
