@@ -26,11 +26,14 @@ class AirportsController < ApplicationController
   end
 
   def create
-    airport = Airport.new
-    airport.code = params[:airport][:code]
-    airport.name = params[:airport][:name]
-    airport.save
-    redirect_to airports_url
+    @airport = Airport.new
+    @airport.code = params[:airport][:code]
+    @airport.name = params[:airport][:name]
+    if @airport.save
+      redirect_to airports_url
+    else
+      render 'new'
+    end
   end
 
   def index
@@ -44,6 +47,20 @@ class AirportsController < ApplicationController
   end
 
   def show
+    @flights = Flight.where("arrival_airport_id = ?", @airport.id)
   end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+

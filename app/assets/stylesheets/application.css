@@ -19,7 +19,7 @@ header h3 a {
   text-decoration: none;
 }
 
-div {
+/*div {
   text-align: center;
   background: #f8fda9;
   width: 200px;
@@ -27,7 +27,7 @@ div {
   margin: 20px;
   padding: 20px;
 }
-.fa { font-size: 48px; color: black;}
+*/.fa { font-size: 48px; color: black;}
 header {
   font-size: 24px;
   color: #444;

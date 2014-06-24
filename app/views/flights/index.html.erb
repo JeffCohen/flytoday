@@ -15,8 +15,8 @@
     <% @flights.each do |flight| %>
       <tr>
         <td><%= flight.airline %></td>
-        <td><%= flight.departure_airport_id %></td>
-        <td><%= flight.arrival_airport_id %></td>
+        <td><%= flight.departing_airport.code %></td>
+        <td><%= flight.arriving_airport.code %></td>
         <td><%= flight.flies_at %></td>
         <td><%= link_to 'Show', flight %></td>
         <td><%= link_to 'Edit', edit_flight_path(flight) %></td>

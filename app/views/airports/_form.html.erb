@@ -1,8 +1,19 @@
+<% if @airport.errors.any? %>
+  <div id="errors">
+    <ul>
+    <% @airport.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <%= form_for @airport do |f| %>
 
   <p>
     <%= f.label :code %>
-    <%= f.text_field :code, :size => 3 %>
+    <%= f.text_field :code, :size => 3, required: true %>
   </p>
 
   <p>
