@@ -1,11 +1,17 @@
 class AirportsController < ApplicationController
 
-  def list
+  def new
+
+  end
+
+  def index
     @airports = Airport.all
-    # render 'list'
-    # render :text => 'Wazzzzup!', :status => 200
-    # render :status => 302, :location => 'http://www.apple.com'
-    # redirect_to 'http://www.apple.com'
+
+    respond_to do |format|
+      format.html # render index.html.erb
+      format.json { render :json => @airports }
+    end
+
   end
 
   def show

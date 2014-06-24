@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get '/' => 'airports#list'
 
   get '/airports' => 'airports#index'
+  get '/airports/new' => 'airports#new'
   get '/airports/:id' => 'airports#show'
+
+  post '/airports' => ....
 
   # http::localhost:3000/airports/5
 

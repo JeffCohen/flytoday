@@ -1,0 +1,21 @@
+<h1>Add a New Airport</h1>
+
+<!-- When I submit this form, add this data to the database
+     and then display the /airports page.
+ -->
+
+<%= form_tag "/airports" do %>
+
+  <p>
+    <%= label_tag 'code' %>
+    <%= text_field_tag 'code', nil, :size => 3 %>
+  </p>
+
+  <p>
+    <%= label_tag 'name' %>
+    <%= text_field_tag 'name', nil, :placeholder => "Enter an airport code" %>
+  </p>
+
+  <%= submit_tag "Add This Airport" %>
+
+<% end %>
