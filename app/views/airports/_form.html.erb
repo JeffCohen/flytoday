@@ -1,0 +1,15 @@
+<%= form_for @airport do |f| %>
+
+  <p>
+    <%= f.label :code %>
+    <%= f.text_field :code, :size => 3 %>
+  </p>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, :placeholder => "Enter an airport code" %>
+  </p>
+
+  <%= submit_tag  %>
+
+<% end %>

@@ -1,6 +1,10 @@
 <h1>Airport Details</h1>
 
+<%= link_to "Edit", edit_airport_url(@airport.id) %> |
+<%= link_to "Toast", airport_url(@airport.id), :method => :delete %>
+
 <p>Airport Code: <%= @airport.code %></p>
+<p>Airport Name: <%= @airport.name %></p>
 <p>Current Delay: <%= @airport.min_delay %> minutes.</p>
 
 <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @airport.code %>&zoom=11&size=600x300">
