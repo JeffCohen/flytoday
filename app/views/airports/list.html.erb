@@ -10,10 +10,8 @@
   </ul>
 </aside>
 
-<% codes = ['ORD', 'MDW', 'SFO', "LAX", "JFK"] %>
-
 <section>
-<% codes.each do |code| %>
+<% Airport.all.each do |code| %>
 
   <%
      airport = Airport.new

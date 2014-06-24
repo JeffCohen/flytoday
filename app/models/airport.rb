@@ -1,13 +1,6 @@
 require 'open-uri'
 
-class Airport
-
-  attr_accessor :code
-  attr_accessor :sport
-
-  def self.all_codes
-    ['ORD', "MDW", "SFO"]
-  end
+class Airport < ActiveRecord::Base
 
   def min_delay
     url = URI.encode("http://services.faa.gov/airport/status/#{code}.json")
