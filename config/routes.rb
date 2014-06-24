@@ -4,13 +4,18 @@ Rails.application.routes.draw do
   # get "/index", :to => 'airports#list'
   # get "/details", :controller => "airports", :action => "show"
 
-  get '/' => 'airports#list'
+  get '/' => 'airports#index'
 
-  get '/airports' => 'airports#index'
-  get '/airports/new' => 'airports#new'
-  get '/airports/:id' => 'airports#show'
+  get '/airports' => 'airports#index', :as => :airports
+  get '/airports/new' => 'airports#new', :as => :new_airport
+  get '/airports/:id' => 'airports#show', :as => :airport
 
-  post '/airports' => ....
+  post '/airports' => 'airports#create'
+
+  # 1. Show an Edit Form => Update
+  # 2. A Delete link => Destroy
+
+
 
   # http::localhost:3000/airports/5
 

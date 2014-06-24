@@ -4,7 +4,10 @@
      and then display the /airports page.
  -->
 
-<%= form_tag "/airports" do %>
+<%= form_tag ...., :method => :patch %>
+
+
+<%= form_tag airports_url do %>
 
   <p>
     <%= label_tag 'code' %>

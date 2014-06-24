@@ -7,11 +7,16 @@
   <%= csrf_meta_tags %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-
 </head>
-<body>
+  <body>
 
-<%= yield %>
+  <header>
+    <h3><%= link_to "FlyToday", airports_url %></h3>
+    <p><%= link_to "Add a New Airport", "/airports/new" %></p>
+  </header>
 
-</body>
+  <%= yield %>
+
+  </body>
+
 </html>

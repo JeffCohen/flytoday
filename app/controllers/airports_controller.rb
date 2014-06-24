@@ -4,6 +4,14 @@ class AirportsController < ApplicationController
 
   end
 
+  def create
+    airport = Airport.new
+    airport.code = params["code"]
+    airport.name = params["name"]
+    airport.save
+    redirect_to airports_url
+  end
+
   def index
     @airports = Airport.all
 
