@@ -12,7 +12,11 @@
 
   <header>
     <h3><%= link_to "FlyToday", airports_url %></h3>
-    <p><%= link_to "Add a New Airport", "/airports/new" %></p>
+    <p>
+      <%= link_to "Flights", flights_url %> |
+      <%= link_to "Airports", airports_url %> |
+      <%= link_to "Add a New Airport", new_airport_url %>
+    </p>
   </header>
 
   <%= yield %>

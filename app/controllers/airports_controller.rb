@@ -15,8 +15,8 @@ class AirportsController < ApplicationController
   end
 
   def update
-    @airport.code = params["code"]
-    @airport.name = params["name"]
+    @airport.code = params[:airport][:code]
+    @airport.name = params[:airport][:name]
     @airport.save
     redirect_to airport_url(@airport.id)
   end
