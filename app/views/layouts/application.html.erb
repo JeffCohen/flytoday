@@ -41,8 +41,10 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if session[:user_id] %>
+          <li><%= link_to "My Account", user_path(session[:user_id]) %></li>
           <li><a href="/logout">Sign Out</a></li>
         <% else %>
+          <li><a href="/users/new">Sign Up</a></li>
           <li><a href="/sessions/new">Sign In</a></li>
         <% end %>
       </ul>

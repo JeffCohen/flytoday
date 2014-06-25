@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [:new, :create]
+
 
   # GET /users
   # GET /users.json
@@ -10,6 +13,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if @user.id != session[:user_id]
+      redirect_to root_url, notice: "Nice try!"
+    end
   end
 
   # GET /users/new
