@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   # 1. You have a string column named password_digest
   # 2. You get methods named :password and :password=
   # 3. You agree to use bcrypt as the algorithm
-  # 4. You get an authenticat() method to test passwords
+  # 4. You get an authenticate() method to test passwords
 
   # Challenge:
 

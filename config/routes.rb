@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'airports#index'
+
   resources :users
 
   resources :flights
@@ -8,9 +10,9 @@ Rails.application.routes.draw do
   # get "/index", :to => 'airports#list'
   # get "/details", :controller => "airports", :action => "show"
 
-  get '/' => 'airports#index'
-
+  # get '/' => 'airports#index'
   resources :airports, :except => [:delete]
+  resources :sessions
 
   # get '/airports' => 'airports#index', :as => :airports
   # get '/airports/new' => 'airports#new', :as => :new_airport

@@ -40,7 +40,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">More...</a></li>
+        <li><a href="/sessions/new">Sign In</a></li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
@@ -48,6 +48,10 @@
 </nav>
 
   <div class="container">
+
+    <% if notice.present? %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
 
     <%= yield %>
 
