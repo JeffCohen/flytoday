@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require flights
  *= require_self
  */
 body { font-family: 'Helvetica Neue'}
@@ -27,7 +27,7 @@ header h3 a {
   margin: 20px;
   padding: 20px;
 }
-*/.fa { font-size: 48px; color: black;}
+.fa { font-size: 48px; color: black;}
 header {
   font-size: 24px;
   color: #444;
@@ -35,7 +35,7 @@ header {
 }
 aside {
   float: right;
-  /*border: solid 1px #000;*/
+  border: solid 1px #000;
   box-shadow: 5px 5px 5px #CCC;
   background-color: #EEE;
   margin-top: 20px;
@@ -45,3 +45,4 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+*/
