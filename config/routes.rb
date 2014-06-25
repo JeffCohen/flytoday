@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :users
+
   resources :flights
 
   # get "/index", :controller => "airports", :action => "list"
