@@ -1,31 +1,28 @@
 <h1>Listing flights</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Airline</th>
-      <th>Departure code</th>
-      <th>Arrival code</th>
-      <th>Flies at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @flights.each do |flight| %>
+<div class="row">
+  <div class="col-md-6">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= flight.airline %></td>
-        <td><%= flight.departing_airport.code %></td>
-        <td><%= flight.arriving_airport.code %></td>
-        <td><%= flight.flies_at %></td>
-        <td><%= link_to 'Show', flight %></td>
-        <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
-        <td><%= link_to 'Destroy', flight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Airline</th>
+        <th>Departure code</th>
+        <th>Arrival code</th>
+        <th>Flies at</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @flights.each do |flight| %>
+        <tr>
+          <td><%= link_to flight.airline, flight %></td>
+          <td><%= flight.departing_airport.code %></td>
+          <td><%= flight.arriving_airport.code %></td>
+          <td><%= flight.flies_at.strftime("%I:%M %p") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>
 
-<%= link_to 'New Flight', new_flight_path %>
