@@ -26,6 +26,9 @@ header h3 a {
 }
 .fa { font-size: 48px; }
 .fa-plane { color: green;}
+.airport a {
+  text-decoration: none;
+}
 
 .delay {
   color: red;

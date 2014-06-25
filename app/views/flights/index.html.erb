@@ -3,6 +3,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th></th>
         <th>Airline</th>
         <th>Departure code</th>
         <th>Arrival code</th>
@@ -14,6 +15,11 @@
     <tbody>
       <% @flights.each do |flight| %>
         <tr>
+          <td>
+            <% if logged_in? %>
+              <%= link_to "Book Now", "/reservations/new", class: 'btn btn-primary' %>
+            <% end %>
+          </td>
           <td><%= link_to flight.airline, flight %></td>
           <td><%= flight.departing_airport.code %></td>
           <td><%= flight.arriving_airport.code %></td>
