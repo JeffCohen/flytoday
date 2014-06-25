@@ -13,6 +13,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    logger.debug "@user.id #{@user.id.inspect}"
+    logger.debug "session[:user_id] #{session[:user_id].inspect}"
     if @user.id != session[:user_id]
       redirect_to root_url, notice: "Nice try!"
     end

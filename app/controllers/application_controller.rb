@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 
   def require_login
-    if session[:user_id]
+    if session[:user_id].nil?
       redirect_to root_url, notice: "Please login first"
     end
   end
