@@ -10,6 +10,7 @@ class FlightsController < ApplicationController
       @flights = Flight.all
     end
 
+    @flights = @flights.page(params[:page]).per(5)
     @flights = @flights.order('flies_at asc')
 
   end
